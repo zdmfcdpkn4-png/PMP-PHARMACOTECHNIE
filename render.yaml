@@ -1,0 +1,41 @@
+# Render Blueprint for PMP Pharmacotechnie POP Métal
+# Deploy as a static site: zero build, just serve the project root.
+#
+# Usage:
+#   1. Push this repo to GitHub.
+#   2. On Render → New → Blueprint → connect the repo. Render will read this file.
+#   3. Click "Apply". The site will be available at https://<service-name>.onrender.com
+#
+# Local preview (optional, requires Python 3):
+#   python3 -m http.server 8080
+#   then open http://localhost:8080
+#
+# The site is fully static — no server, no build, no env vars required.
+
+services:
+  - type: web
+    name: pmp-pharmacotechnie-pop-metal
+    runtime: static
+    # No build step — the HTML is committed as-is. The repo root IS the publish dir.
+    buildCommand: ""
+    staticPublishPath: .
+    # Long-cache assets, no-cache the HTML so updates roll out instantly.
+    headers:
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /*.css
+        name: Cache-Control
+        value: public, max-age=86400
+      - path: /*.jsx
+        name: Cache-Control
+        value: public, max-age=86400
+      - path: /*.html
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+    # No SPA rewrites needed — this is multi-file static.
+    pullRequestPreviewsEnabled: true
+    autoDeploy: true
