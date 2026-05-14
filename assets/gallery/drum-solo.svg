@@ -1,0 +1,58 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+
+  <defs>
+    <linearGradient id="bg-b" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f071e"></stop>
+      <stop offset="100%" stop-color="#3a0a26"></stop>
+    </linearGradient>
+    <radialGradient id="spot-b" cx="50%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#fff" stop-opacity=".5"></stop>
+      <stop offset="60%" stop-color="#fff" stop-opacity=".06"></stop>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"></stop>
+    </radialGradient>
+    <filter id="grain-b">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="98"></feTurbulence>
+      <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .08 0"></feColorMatrix>
+    </filter>
+    <filter id="smoke-b">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.02" numOctaves="2" seed="1"></feTurbulence>
+      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .14 0"></feColorMatrix>
+    </filter>
+  </defs>
+
+<rect width="1200" height="900" fill="url(#bg-b)"></rect>
+
+<ellipse cx="600" cy="450" rx="500" ry="380" fill="#f0247a" opacity=".35"></ellipse>
+
+<g transform="translate(600 450)">
+  <ellipse cx="0" cy="0" rx="320" ry="320" fill="#f6f1e6" stroke="#000" stroke-width="10"></ellipse>
+  <ellipse cx="0" cy="0" rx="320" ry="320" fill="url(#spot-b)"></ellipse>
+  <ellipse cx="0" cy="0" rx="280" ry="280" fill="none" stroke="#000" stroke-width="3" opacity=".4"></ellipse>
+  
+  <text x="0" y="60" text-anchor="middle" font-family="Metal Mania, serif" font-size="280" fill="#0f071e">P</text>
+  
+  <g fill="#e6c54a" opacity=".9">
+    <polygon points="0,-300 12,-260 0,-220 -12,-260"></polygon>
+  </g>
+</g>
+
+<g transform="translate(1020 220) rotate(8)">
+  <ellipse cx="0" cy="0" rx="170" ry="22" fill="#e6c54a" stroke="#000" stroke-width="3"></ellipse>
+  <ellipse cx="0" cy="-4" rx="170" ry="14" fill="#f47a2e"></ellipse>
+  <circle cx="0" cy="0" r="14" fill="#000"></circle>
+</g>
+
+<g transform="translate(420 370) rotate(-30)">
+  <rect x="0" y="0" width="220" height="14" rx="6" fill="#f6f1e6"></rect>
+  <ellipse cx="220" cy="7" rx="14" ry="10" fill="#f6f1e6"></ellipse>
+</g>
+
+<g stroke="#f76ba6" stroke-width="3" opacity=".55" fill="none">
+  <line x1="430" y1="380" x2="280" y2="320"></line>
+  <line x1="450" y1="400" x2="300" y2="390"></line>
+</g>
+<rect width="1200" height="900" filter="url(#grain-b)"></rect>
+<rect x="40" y="810" width="360" height="50" fill="#000" opacity=".75"></rect>
+<text x="56" y="842" font-family="JetBrains Mono, monospace" font-size="14" fill="#fff" letter-spacing="3">SŒUR HOTTE · SOLO DE BATTERIE</text>
+</svg>
