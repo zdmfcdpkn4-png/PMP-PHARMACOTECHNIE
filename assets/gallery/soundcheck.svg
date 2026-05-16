@@ -1,0 +1,55 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+
+  <defs>
+    <linearGradient id="bg-a" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f071e"></stop>
+      <stop offset="100%" stop-color="#1a0d3a"></stop>
+    </linearGradient>
+    <radialGradient id="spot-a" cx="50%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#fff" stop-opacity=".5"></stop>
+      <stop offset="60%" stop-color="#fff" stop-opacity=".06"></stop>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"></stop>
+    </radialGradient>
+    <filter id="grain-a">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="97"></feTurbulence>
+      <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .08 0"></feColorMatrix>
+    </filter>
+    <filter id="smoke-a">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.02" numOctaves="2" seed="1"></feTurbulence>
+      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .14 0"></feColorMatrix>
+    </filter>
+  </defs>
+
+<rect width="1200" height="900" fill="url(#bg-a)"></rect>
+<rect width="1200" height="900" fill="url(#spot-a)"></rect>
+
+<polygon points="600,0 700,0 900,900 500,900" fill="#f0247a" opacity=".25" style="mix-blend-mode:screen"></polygon>
+<polygon points="500,0 580,0 380,900 200,900" fill="#f47a2e" opacity=".2" style="mix-blend-mode:screen"></polygon>
+
+<rect x="0" y="720" width="1200" height="180" fill="#000" opacity=".75"></rect>
+<rect x="0" y="720" width="1200" height="3" fill="#f0247a" opacity=".7"></rect>
+
+<g fill="#000" opacity=".95">
+  
+  <path d="M540 720 L520 540 L540 460 Q580 440 600 460 L605 540 L600 620 L640 720 L600 720 L580 600 L560 720 Z"></path>
+  
+  <circle cx="568" cy="430" r="34"></circle>
+  
+  <path d="M520 510 L470 540 L460 620 L490 620 L500 560 Z"></path>
+  <path d="M600 510 L660 530 L720 620 L690 640 L640 580 Z"></path>
+  
+  <ellipse cx="660" cy="620" rx="60" ry="34" transform="rotate(-12 660 620)"></ellipse>
+  <rect x="700" y="560" width="160" height="14" rx="3" transform="rotate(-12 780 567)"></rect>
+</g>
+
+<g fill="#000" opacity=".85">
+  <rect x="8" y="700" width="14" height="60" rx="2"></rect><circle cx="15" cy="694" r="6"></circle><rect x="11" y="670" width="2" height="20"></rect><circle cx="12" cy="668" r="3"></circle><rect x="30" y="690.9417989199538" width="14" height="73" rx="2"></rect><rect x="52" y="675.3399526006236" width="14" height="86" rx="2"></rect><rect x="74" y="687.5136969103456" width="14" height="69" rx="2"></rect><rect x="96" y="675.4749334485107" width="14" height="82" rx="2"></rect><circle cx="103" cy="669.4749334485107" r="6"></circle><rect x="118" y="697.6279463948752" width="14" height="65" rx="2"></rect><rect x="140" y="685.4183956323532" width="14" height="78" rx="2"></rect><rect x="143" y="655.4183956323532" width="2" height="20"></rect><circle cx="144" cy="653.4183956323532" r="3"></circle><rect x="162" y="697.5340834829923" width="14" height="61" rx="2"></rect><rect x="184" y="682.0832890833947" width="14" height="74" rx="2"></rect><circle cx="191" cy="676.0832890833947" r="6"></circle><rect x="206" y="673.1344921888846" width="14" height="87" rx="2"></rect><rect x="228" y="693.9624294227795" width="14" height="70" rx="2"></rect><rect x="250" y="678.2124734269828" width="14" height="83" rx="2"></rect><rect x="272" y="690.449731865674" width="14" height="66" rx="2"></rect><circle cx="279" cy="684.449731865674" r="6"></circle><rect x="275" y="660.449731865674" width="2" height="20"></rect><circle cx="276" cy="658.449731865674" r="3"></circle><rect x="294" y="678.5806687103749" width="14" height="79" rx="2"></rect><rect x="316" y="700.7278544802725" width="14" height="62" rx="2"></rect><rect x="338" y="688.3466225541442" width="14" height="75" rx="2"></rect><rect x="360" y="670.4097772675143" width="14" height="88" rx="2"></rect><circle cx="367" cy="664.4097772675143" r="6"></circle><rect x="382" y="685.1128062170245" width="14" height="71" rx="2"></rect><rect x="404" y="676.268832290102" width="14" height="84" rx="2"></rect><rect x="407" y="646.268832290102" width="2" height="20"></rect><circle cx="408" cy="644.268832290102" r="3"></circle><rect x="426" y="696.9785790955113" width="14" height="67" rx="2"></rect><rect x="448" y="681.0836231532314" width="14" height="80" rx="2"></rect><circle cx="455" cy="675.0836231532314" r="6"></circle><rect x="470" y="693.3897815671593" width="14" height="63" rx="2"></rect><rect x="492" y="681.689139822217" width="14" height="76" rx="2"></rect><rect x="514" y="673.8246778287213" width="14" height="89" rx="2"></rect><rect x="536" y="691.2710650181058" width="14" height="72" rx="2"></rect><circle cx="543" cy="685.2710650181058" r="6"></circle><rect x="539" y="661.2710650181058" width="2" height="20"></rect><circle cx="540" cy="659.2710650181058" r="3"></circle><rect x="558" y="673.2872693220154" width="14" height="85" rx="2"></rect><rect x="580" y="688.146719102105" width="14" height="68" rx="2"></rect><rect x="602" y="679.40286838797" width="14" height="81" rx="2"></rect><rect x="624" y="699.9902296756312" width="14" height="64" rx="2"></rect><circle cx="631" cy="693.9902296756312" r="6"></circle><rect x="646" y="683.9535474869956" width="14" height="77" rx="2"></rect><rect x="668" y="696.3339138083375" width="14" height="60" rx="2"></rect><rect x="671" y="666.3339138083375" width="2" height="20"></rect><circle cx="672" cy="664.3339138083375" r="3"></circle><rect x="690" y="684.8002241217586" width="14" height="73" rx="2"></rect><rect x="712" y="676.9183069495714" width="14" height="86" rx="2"></rect><circle cx="719" cy="670.9183069495714" r="6"></circle><rect x="734" y="694.1918084668905" width="14" height="69" rx="2"></rect><rect x="756" y="676.166698182033" width="14" height="82" rx="2"></rect><rect x="778" y="691.1849893889621" width="14" height="65" rx="2"></rect><rect x="800" y="682.5364489105826" width="14" height="78" rx="2"></rect><circle cx="807" cy="676.5364489105826" r="6"></circle><rect x="803" y="652.5364489105826" width="2" height="20"></rect><circle cx="804" cy="650.5364489105826" r="3"></circle><rect x="822" y="702.9973679883252" width="14" height="61" rx="2"></rect><rect x="844" y="686.8223935216105" width="14" height="74" rx="2"></rect><rect x="866" y="669.2821917660904" width="14" height="87" rx="2"></rect><rect x="888" y="687.9137959916524" width="14" height="70" rx="2"></rect><circle cx="895" cy="681.9137959916524" r="6"></circle><rect x="910" y="680.0086359642979" width="14" height="83" rx="2"></rect><rect x="932" y="697.1089425261049" width="14" height="66" rx="2"></rect><rect x="935" y="667.1089425261049" width="2" height="20"></rect><circle cx="936" cy="665.1089425261049" r="3"></circle><rect x="954" y="679.0482001929083" width="14" height="79" rx="2"></rect><rect x="976" y="694.2275738004458" width="14" height="62" rx="2"></rect><circle cx="983" cy="688.2275738004458" r="6"></circle><rect x="998" y="685.6694228012112" width="14" height="75" rx="2"></rect><rect x="1020" y="675.9999859613824" width="14" height="88" rx="2"></rect><rect x="1042" y="689.6903095697833" width="14" height="71" rx="2"></rect><rect x="1064" y="672.2346739292032" width="14" height="84" rx="2"></rect><circle cx="1071" cy="666.2346739292032" r="6"></circle><rect x="1067" y="642.2346739292032" width="2" height="20"></rect><circle cx="1068" cy="640.2346739292032" r="3"></circle><rect x="1086" y="691.0297270015344" width="14" height="67" rx="2"></rect><rect x="1108" y="683.0955627262316" width="14" height="80" rx="2"></rect><rect x="1130" y="700.0225609029577" width="14" height="63" rx="2"></rect><rect x="1152" y="681.9319093556038" width="14" height="76" rx="2"></rect><circle cx="1159" cy="675.9319093556038" r="6"></circle><rect x="1174" y="667.2744241808689" width="14" height="89" rx="2"></rect><rect x="1196" y="688.8016396891243" width="14" height="72" rx="2"></rect><rect x="1199" y="658.8016396891243" width="2" height="20"></rect><circle cx="1200" cy="656.8016396891243" r="3"></circle><rect x="1218" y="678.998080634323" width="14" height="85" rx="2"></rect><rect x="1240" y="692.5574449958771" width="14" height="68" rx="2"></rect><circle cx="1247" cy="686.5574449958771" r="6"></circle><rect x="1262" y="675.1914140322236" width="14" height="81" rx="2"></rect><rect x="1284" y="694.1478860532571" width="14" height="64" rx="2"></rect><rect x="1306" y="686.1789889360692" width="14" height="77" rx="2"></rect>
+</g>
+
+<rect width="1200" height="900" fill="white" filter="url(#smoke-a)" opacity=".7"></rect>
+<rect width="1200" height="900" filter="url(#grain-a)"></rect>
+
+<rect x="40" y="810" width="280" height="50" fill="#000" opacity=".7"></rect>
+<text x="56" y="842" font-family="JetBrains Mono, monospace" font-size="14" fill="#fff" letter-spacing="3">SOUNDCHECK · SALLE 3B</text>
+</svg>
