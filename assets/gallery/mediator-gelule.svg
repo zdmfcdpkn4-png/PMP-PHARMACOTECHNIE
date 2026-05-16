@@ -1,0 +1,42 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+
+  <defs>
+    <linearGradient id="bg-c" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2b0b1c"></stop>
+      <stop offset="100%" stop-color="#0f071e"></stop>
+    </linearGradient>
+    <radialGradient id="spot-c" cx="50%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#fff" stop-opacity=".5"></stop>
+      <stop offset="60%" stop-color="#fff" stop-opacity=".06"></stop>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"></stop>
+    </radialGradient>
+    <filter id="grain-c">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="99"></feTurbulence>
+      <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .08 0"></feColorMatrix>
+    </filter>
+    <filter id="smoke-c">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.02" numOctaves="2" seed="1"></feTurbulence>
+      <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .14 0"></feColorMatrix>
+    </filter>
+  </defs>
+
+<rect width="1200" height="900" fill="url(#bg-c)"></rect>
+<ellipse cx="600" cy="450" rx="600" ry="500" fill="#f47a2e" opacity=".22"></ellipse>
+
+<g transform="translate(600 450) rotate(-18)">
+  
+  <ellipse cx="20" cy="500" rx="320" ry="40" fill="#000" opacity=".5"></ellipse>
+  
+  <path d="M -300 -360 Q 0 -440 300 -360 Q 320 -100 0 460 Q -320 -100 -300 -360 Z" fill="#f0247a"></path>
+  
+  <path d="M -300 -360 Q 0 -440 300 -360 Q 280 -180 220 -120 Q 0 -100 -220 -120 Q -280 -180 -300 -360 Z" fill="#e6c54a"></path>
+  
+  <path d="M -260 -340 Q -120 -400 80 -380 Q 60 -200 -20 -180 Q -180 -200 -260 -340 Z" fill="rgba(255,255,255,.5)"></path>
+  
+  <text x="0" y="280" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="64" letter-spacing="10" fill="#f6f1e6" opacity=".8">PMP 500</text>
+</g>
+<rect width="1200" height="900" filter="url(#grain-c)"></rect>
+<rect x="40" y="810" width="420" height="50" fill="#000" opacity=".75"></rect>
+<text x="56" y="842" font-family="JetBrains Mono, monospace" font-size="14" fill="#fff" letter-spacing="3">DR. RIFF EXCIPIENT · MEDIATOR 500 LP</text>
+</svg>
