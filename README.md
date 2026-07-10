@@ -76,7 +76,7 @@ python3 -m http.server 8080
 ├── tweaks-panel.jsx            ← panneau de tweaks
 ├── render.yaml                 ← blueprint Render (auto-détecté)
 └── assets/
-    ├── audio/                  ← 17 morceaux officiels (mp3)
+    ├── audio/                  ← 18 morceaux officiels (mp3)
     ├── gallery/                ← 6 visuels éditoriaux SVG
     ├── pmp-hero-logo.png       ← logo central du hero
     └── pharmacotechnie-logo.png ← logo pour les goodies
