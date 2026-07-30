@@ -75,6 +75,12 @@ python3 -m http.server 8080
 ├── app.jsx                     ← composant racine + panier + mode concert
 ├── tweaks-panel.jsx            ← panneau de tweaks
 ├── render.yaml                 ← blueprint Render (auto-détecté)
+├── favicon.ico                 ← icône onglet / favoris (16-32-48)
+├── favicon-16x16.png           ← favicon PNG
+├── favicon-32x32.png           ← favicon PNG
+├── apple-touch-icon.png        ← raccourci écran d'accueil iOS (180×180)
+├── icon-192.png / icon-512.png ← icônes Android / manifest
+├── site.webmanifest            ← web app manifest (nom, icônes, couleurs)
 └── assets/
     ├── audio/                  ← 17 morceaux officiels (mp3)
     ├── gallery/                ← 6 visuels éditoriaux SVG

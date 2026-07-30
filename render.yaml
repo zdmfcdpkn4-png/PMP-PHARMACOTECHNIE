@@ -33,6 +33,16 @@ services:
       - path: /*.html
         name: Cache-Control
         value: public, max-age=0, must-revalidate
+      # Favicons / icônes de raccourci : cache 1 jour (rollout rapide si le logo change)
+      - path: /favicon.ico
+        name: Cache-Control
+        value: public, max-age=86400
+      - path: /*.png
+        name: Cache-Control
+        value: public, max-age=86400
+      - path: /site.webmanifest
+        name: Cache-Control
+        value: public, max-age=86400
       - path: /*
         name: X-Frame-Options
         value: SAMEORIGIN
