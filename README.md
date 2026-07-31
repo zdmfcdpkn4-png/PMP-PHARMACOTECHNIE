@@ -82,7 +82,7 @@ python3 -m http.server 8080
 ├── icon-192.png / icon-512.png ← icônes Android / manifest
 ├── site.webmanifest            ← web app manifest (nom, icônes, couleurs)
 └── assets/
-    ├── audio/                  ← 17 morceaux officiels (mp3)
+    ├── audio/                  ← 18 morceaux officiels (mp3)
     ├── gallery/                ← 6 visuels éditoriaux SVG
     ├── pmp-hero-logo.png       ← logo central du hero
     └── pharmacotechnie-logo.png ← logo pour les goodies
