@@ -33,13 +33,15 @@ services:
       - path: /*.html
         name: Cache-Control
         value: public, max-age=0, must-revalidate
-      # Favicons / icônes de raccourci : cache 1 jour (rollout rapide si le logo change)
+      # Favicons / icônes de raccourci : cache 1 jour (rollout rapide si le logo change).
+      # no-transform est OBLIGATOIRE : sans lui, Cloudflare Polish convertit les PNG en WebP
+      # pour les clients Safari, et le générateur de raccourcis iOS rejette le WebP (icône grise).
       - path: /favicon.ico
         name: Cache-Control
-        value: public, max-age=86400
+        value: public, max-age=86400, no-transform
       - path: /*.png
         name: Cache-Control
-        value: public, max-age=86400
+        value: public, max-age=86400, no-transform
       - path: /site.webmanifest
         name: Cache-Control
         value: public, max-age=86400
