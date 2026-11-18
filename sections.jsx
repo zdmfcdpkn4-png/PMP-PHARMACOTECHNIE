@@ -89,66 +89,18 @@ function Marquee() {
 }
 
 /* ═══ DISCOGRAPHIE ═══════════════════════════════════════ */
-function formatTime(s) {
-  if (!isFinite(s) || s < 0) return "—:—";
-  const m = Math.floor(s / 60);
-  const sec = Math.floor(s % 60);
-  return `${m}:${sec.toString().padStart(2, "0")}`;
-}
-
 function Discographie() {
   const [playing, setPlaying] = useState(null);
-  const [vizBars, setVizBars] = useState(() => new Array(48).fill(8));
-  const [progress, setProgress] = useState(0);
-  const [duration, setDuration] = useState(0);
-  const [currentTime, setCurrentTime] = useState(0);
-  const rafRef = useRef();
 
   useEffect(() => {
     const unsub = PmpAudio.subscribe?.((n) => setPlaying(n));
     return unsub;
   }, []);
 
-  useEffect(() => {
-    if (playing === null) {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-      setVizBars(new Array(48).fill(8));
-      setProgress(0); setCurrentTime(0); setDuration(0);
-      return;
-    }
-    const an = PmpAudio.getAnalyser();
-    if (!an) return;
-    const buf = new Uint8Array(an.frequencyBinCount);
-    const tick = () => {
-      an.getByteFrequencyData(buf);
-      const bars = [];
-      const N = 48;
-      const step = Math.floor(buf.length / N);
-      for (let i = 0; i < N; i++) {
-        let m = 0;
-        for (let j = 0; j < step; j++) m = Math.max(m, buf[i*step+j]);
-        bars.push(4 + (m / 255) * 44);
-      }
-      setVizBars(bars);
-      // pull progress from audio element if present
-      const el = PmpAudio.getAudioElement?.();
-      if (el && el.duration) {
-        setDuration(el.duration);
-        setCurrentTime(el.currentTime);
-        setProgress((el.currentTime / el.duration) * 100);
-      }
-      rafRef.current = requestAnimationFrame(tick);
-    };
-    rafRef.current = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(rafRef.current);
-  }, [playing]);
-
   const toggle = (t) => {
     if (playing === t.n) { PmpAudio.stop(); setPlaying(null); }
     else { PmpAudio.start(t); setPlaying(t.n); }
   };
-
-  const currentTrack = PMP_TRACKS.find(t => t.n === playing);
 
   return (
     <section className="pmp" id="discographie" data-screen-label="02 Discographie">
@@ -158,41 +110,6 @@ function Discographie() {
         Forme pharmaceutique sonore officielle · LP « QSP 666 » · pressage 33 tours, verre brun de protection
         UV · à conserver à l'abri de la lumière et des oreilles sensibles.
       </p>
-
-      {/* Stylized player bar — shows currently playing track */}
-      {currentTrack && (
-        <div className="pmp-player" role="region" aria-label="Lecteur PMP">
-          <div className="player-art">
-            <img src="assets/pmp-hero-logo.png" alt="" className="player-art-img"/>
-            <div className="player-art-ring"></div>
-          </div>
-          <div className="player-body">
-            <div className="player-head">
-              <div className="player-status">
-                <span className="player-led"></span>
-                <span>EN LECTURE · ℞ {currentTrack.bpm} BPM</span>
-              </div>
-              <div className="player-title">{currentTrack.title}</div>
-              <div className="player-sub">{currentTrack.sub}</div>
-            </div>
-            <div className="player-viz">
-              {vizBars.map((h, i) => (
-                <span key={i} style={{ height: `${h}px` }}/>
-              ))}
-            </div>
-            <div className="player-progress">
-              <span className="ptime">{formatTime(currentTime)}</span>
-              <div className="ptrack">
-                <div className="pfill" style={{ width: progress + "%" }}></div>
-              </div>
-              <span className="ptime">{formatTime(duration)}</span>
-            </div>
-          </div>
-          <button className="player-stop" onClick={() => { PmpAudio.stop(); setPlaying(null); }} aria-label="Stop">
-            <svg width="14" height="14" viewBox="0 0 14 14"><rect x="2" y="2" width="10" height="10" fill="currentColor"/></svg>
-          </button>
-        </div>
-      )}
 
       <div className="disco">
         {PMP_TRACKS.map(t => (
