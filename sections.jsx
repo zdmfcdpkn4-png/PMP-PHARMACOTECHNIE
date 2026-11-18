@@ -31,7 +31,7 @@ function Hero({ onPlay, onScrollTo, concertMode, setConcertMode, vinylPlaying, o
               Écouter « Panique en Pharmaco »
             </button>
             <button className="btn ghost" onClick={() => onScrollTo("concerts")}>
-              Tournée 2026 →
+              Tournée 2027 →
             </button>
             <button
               className={`btn ghost concert-btn ${concertMode ? "is-live" : ""}`}
@@ -211,7 +211,7 @@ function Concerts() {
                 <div className="tk-band">
                   <span>PMP · POP MÉTAL</span>
                   <span className="tk-band-dot"></span>
-                  <span>TOURNÉE QSP 666 · MMXXVI</span>
+                  <span>TOURNÉE QSP 666 · MMXXVII</span>
                 </div>
 
                 <div className="tk-head">
