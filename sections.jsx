@@ -190,7 +190,7 @@ function Concerts() {
               {/* LEFT STUB — logo + date */}
               <div className="tk-stub">
                 <div className="tk-stub-logo">
-                  <img src="assets/pmp-hero-logo.png" alt="" draggable="false"/>
+                  <img src="assets/pmp-hero-logo.webp" alt="" draggable="false"/>
                 </div>
                 <div className="tk-stub-date">
                   <span className="tk-day">{d.day}</span>
@@ -403,7 +403,7 @@ function ProductPic({ product }) {
   const c = (name) => `var(--c-${name})`;
   const bg = c(swatches[0]);
   const fg = c(swatches[1] || swatches[0]);
-  const HERO = "assets/pmp-hero-logo.png";       // metallic main logo
+  const HERO = "assets/pmp-hero-logo.webp";       // metallic main logo
   const PHARMA = "assets/pharmacotechnie-logo.png"; // colourful petal P
 
   // Common: studio backdrop with subtle vignette + light from top-left

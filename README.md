@@ -45,17 +45,22 @@ git push -u origin main
 
 ## Le blueprint configure :
 
-- `runtime: static` — pas de build, serveur statique
-- `staticPublishPath: .` — la racine du dépôt est publiée telle quelle
-- Cache long pour `/assets/*` (images, audios, logos)
+- `runtime: static` avec `buildCommand: npm ci && npm run build` : `build.mjs` précompile les `.jsx` (mêmes options Babel que dans le navigateur), passe React en version production et ajoute une empreinte `?v=<hash>` à chaque JS, CSS et fichier `assets/`
+- `staticPublishPath: dist` : seul le site construit est publié (pas le README, ni `render.yaml`, ni les sources)
+- Cache d'un an pour JS, CSS et `/assets/*` : leur URL change dès que leur contenu change
 - No-cache sur les fichiers HTML pour rollouts immédiats
 - Pull request previews activées
 - Auto-deploy activé sur chaque push
 
+On continue à modifier les `.jsx` comme avant : le build est refait à chaque déploiement.
+
 ### Aperçu local
 
 ```bash
+# Sources (Babel dans le navigateur, plus lent) :
 python3 -m http.server 8080
+# Version de production, identique au site en ligne :
+npm ci && npm run build && python3 -m http.server 8080 -d dist
 # puis ouvrir http://localhost:8080
 ```
 
@@ -75,6 +80,8 @@ python3 -m http.server 8080
 ├── app.jsx                     ← composant racine + panier + mode concert
 ├── tweaks-panel.jsx            ← panneau de tweaks
 ├── render.yaml                 ← blueprint Render (auto-détecté)
+├── build.mjs                   ← construit la version de production dans dist/ (non versionné)
+├── package.json                ← dépendance du build (@babel/standalone 7.29.0)
 ├── favicon.ico                 ← icône onglet / favoris (16-32-48)
 ├── favicon-16x16.png           ← favicon PNG
 ├── favicon-32x32.png           ← favicon PNG
@@ -84,7 +91,8 @@ python3 -m http.server 8080
 └── assets/
     ├── audio/                  ← 17 morceaux officiels (mp3)
     ├── gallery/                ← 6 visuels éditoriaux SVG
-    ├── pmp-hero-logo.png       ← logo central du hero
+    ├── pmp-hero-logo.webp      ← logo central du hero (800 px, utilisé par le site)
+    ├── pmp-hero-logo.png       ← logo d'origine en pleine résolution (non utilisé)
     └── pharmacotechnie-logo.png ← logo pour les goodies
 ```
 

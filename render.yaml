@@ -1,35 +1,38 @@
 # Render Blueprint for PMP Pharmacotechnie POP Métal
-# Deploy as a static site: zero build, just serve the project root.
+# Site statique construit par build.mjs à chaque déploiement : les .jsx sont
+# précompilés (mêmes options Babel que dans le navigateur), React passe en
+# version production et chaque JS, CSS et fichier assets/ reçoit une empreinte
+# ?v=<hash>. Seul dist/ est publié : README, render.yaml et sources ne sont pas en ligne.
 #
 # Usage:
 #   1. Push this repo to GitHub.
 #   2. On Render → New → Blueprint → connect the repo. Render will read this file.
 #   3. Click "Apply". The site will be available at https://<service-name>.onrender.com
 #
-# Local preview (optional, requires Python 3):
-#   python3 -m http.server 8080
-#   then open http://localhost:8080
-#
-# The site is fully static — no server, no build, no env vars required.
+# Aperçu local (Python 3) :
+#   sources, Babel dans le navigateur : python3 -m http.server 8080
+#   version de production :            npm ci && npm run build && python3 -m http.server 8080 -d dist
+#   puis ouvrir http://localhost:8080
 
 services:
   - type: web
     name: pmp-pharmacotechnie-pop-metal
     runtime: static
-    # No build step — the HTML is committed as-is. The repo root IS the publish dir.
-    buildCommand: ""
-    staticPublishPath: .
-    # Long-cache assets, no-cache the HTML so updates roll out instantly.
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    # HTML jamais mis en cache : chaque visite récupère les empreintes à jour.
+    # JS, CSS et assets/ sont appelés avec ?v=<empreinte du contenu> : leur URL
+    # change dès que le fichier change, on peut donc les garder un an sans risque.
     headers:
       - path: /assets/*
         name: Cache-Control
         value: public, max-age=31536000, immutable
       - path: /*.css
         name: Cache-Control
-        value: public, max-age=86400
-      - path: /*.jsx
+        value: public, max-age=31536000, immutable
+      - path: /*.js
         name: Cache-Control
-        value: public, max-age=86400
+        value: public, max-age=31536000, immutable
       - path: /*.html
         name: Cache-Control
         value: public, max-age=0, must-revalidate
