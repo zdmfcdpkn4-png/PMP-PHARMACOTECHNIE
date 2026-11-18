@@ -23,16 +23,16 @@ const PMP_TRACKS = [
 ];
 
 const PMP_CONCERTS = [
-  { date: "12.09.26", city: "La Roche-sur-Yon", venue: "Salle de Préparation 3B",   etab: "CH Côte de Lumière (fictif)", status: "complet"   },
-  { date: "14.09.26", city: "Nantes",           venue: "Cantine du personnel · 23h59", etab: "Polyclinique de l'Erdre (fictif)", status: "billets" },
-  { date: "21.09.26", city: "Cholet",           venue: "Réfectoire · soirée TPN",   etab: "Centre Médical du Bocage (fictif)", status: "billets" },
-  { date: "05.10.26", city: "Paris",            venue: "Amphi A · festival OncoMétal", etab: "Hôpital du Faubourg (fictif)", status: "billets" },
-  { date: "12.10.26", city: "Bordeaux",         venue: "Vestiaire Hommes",          etab: "Clinique des Sables (fictif)", status: "privé"    },
-  { date: "19.10.26", city: "Rennes",           venue: "Sous-sol Pharmacie · Death-Stage", etab: "Polyclinique du Léon (fictif)", status: "billets"},
-  { date: "31.10.26", city: "Lille",            venue: "Morgue · Halloween Special", etab: "Hôpital de Bois-Joli (fictif)", status: "rare"    },
-  { date: "08.11.26", city: "Le Mans",          venue: "Cafétéria · Excipient Fest", etab: "CH des 24 Heures (fictif)", status: "billets"   },
-  { date: "22.11.26", city: "Strasbourg",       venue: "Stérilisation Centrale",    etab: "Hôpital Kléber (fictif)", status: "billets"    },
-  { date: "13.12.26", city: "Lyon",             venue: "Hotte n°4 · acoustique",    etab: "Centre Gerland (fictif)", status: "complet"    },
+  { date: "12.09.27", city: "La Roche-sur-Yon", venue: "Salle de Préparation 3B",   etab: "CH Côte de Lumière (fictif)", status: "complet"   },
+  { date: "14.09.27", city: "Nantes",           venue: "Cantine du personnel · 23h59", etab: "Polyclinique de l'Erdre (fictif)", status: "billets" },
+  { date: "21.09.27", city: "Cholet",           venue: "Réfectoire · soirée TPN",   etab: "Centre Médical du Bocage (fictif)", status: "billets" },
+  { date: "05.10.27", city: "Paris",            venue: "Amphi A · festival OncoMétal", etab: "Hôpital du Faubourg (fictif)", status: "billets" },
+  { date: "12.10.27", city: "Bordeaux",         venue: "Vestiaire Hommes",          etab: "Clinique des Sables (fictif)", status: "privé"    },
+  { date: "19.10.27", city: "Rennes",           venue: "Sous-sol Pharmacie · Death-Stage", etab: "Polyclinique du Léon (fictif)", status: "billets"},
+  { date: "31.10.27", city: "Lille",            venue: "Morgue · Halloween Special", etab: "Hôpital de Bois-Joli (fictif)", status: "rare"    },
+  { date: "08.11.27", city: "Le Mans",          venue: "Cafétéria · Excipient Fest", etab: "CH des 24 Heures (fictif)", status: "billets"   },
+  { date: "22.11.27", city: "Strasbourg",       venue: "Stérilisation Centrale",    etab: "Hôpital Kléber (fictif)", status: "billets"    },
+  { date: "13.12.27", city: "Lyon",             venue: "Hotte n°4 · acoustique",    etab: "Centre Gerland (fictif)", status: "complet"    },
 ];
 
 const PMP_MERCH = [

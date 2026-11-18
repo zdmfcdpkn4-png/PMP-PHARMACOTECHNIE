@@ -62,7 +62,7 @@ function PmpRoseLogo({ size = 480 }) {
             </clipPath>
           </defs>
           <g clipPath="url(#pmp-label-clip)">
-            <image href="assets/pmp-hero-logo.png"
+            <image href="assets/pmp-hero-logo.webp"
                    x="116" y="116" width="168" height="168"
                    preserveAspectRatio="xMidYMid slice"/>
           </g>
