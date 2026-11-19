@@ -89,7 +89,7 @@ npm ci && npm run build && python3 -m http.server 8080 -d dist
 ├── icon-192.png / icon-512.png ← icônes Android / manifest
 ├── site.webmanifest            ← web app manifest (nom, icônes, couleurs)
 └── assets/
-    ├── audio/                  ← 17 morceaux officiels (mp3)
+    ├── audio/                  ← 18 morceaux officiels (mp3)
     ├── gallery/                ← 6 visuels éditoriaux SVG
     ├── pmp-hero-logo.webp      ← logo central du hero (800 px, utilisé par le site)
     ├── pmp-hero-logo.png       ← logo d'origine en pleine résolution (non utilisé)
